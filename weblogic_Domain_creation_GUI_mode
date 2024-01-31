@@ -1,0 +1,34 @@
+Domain creation in GUI mode:-
+
+Goto below this path
+cd /weblogic/Oracle/Middleware/Oracle_Home/oracle_common/common/bin/
+
+After that enter below command 
+ 	 ./config.sh 
+And then you will get one pop-up for domain creation .
+1.Create Domain  create new domain and check  path and click on next. 
+2.Templates  select basic wlserver (if you need any template select{optional}) and click next.
+3.Administrator account  mention name(user name) and password click on next.
+4.Domain mode and JDK  Select Domain mode (Production) and
+     It finds available jdk . Or  (optional-mention JDK path)  click next.
+5.Advanced configuration select Admin server,Node manger,Topology and click next
+6.Administration server  server name(admin),listen address(local host),port(7001) and
+     remaing optional for practice so click next.
+7.Nodemaneger  Nodemanager type – per domain default location
+		       Node manager credential type user name and password click next.
+8.Managed servers  click on add and mention name(server1),listen address(local host),port(7003)
+9.Clusters  (optinal) [we can create in console also]
+10.Server templates,Machines,Virtual targets, Partitions ( optinal) [we can create in console also]
+11.Configuration summary:- check and click create and configuration done click next and click finish.
+First time you have to star the weblogic server got below path and after that you can star from bin.
+/weblogic/Oracle/Middleware/Oracle_Home/user_projects/domains/base_domain
+After run this       ./startWebLogic.sh
+After that got browser  http://localhost:7001/console
+
+Goto below path and create boot.properties file and type user name and password
+ 
+
+If you star managed servers from backend go bin and 
+	./ startManagedWebLogic.sh (manged server name-server1) (run in back ground-&)
+./startManagedWebLogic.sh server1 &
+./stopManagedWebLogic.sh server1 &
